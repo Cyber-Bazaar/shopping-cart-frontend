@@ -1,5 +1,5 @@
 import { Button, Card } from "react-bootstrap";
-import { useAuth0 } from "@auth0/auth0-react";
+// import { useAuth0 } from "@auth0/auth0-react";
 import { formatCurrency } from "../utilities/formatCurrency";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 
