@@ -1,5 +1,5 @@
 import axios from "axios";
-import {axiosPublic} from "../config/axiosConfig";
+import { axiosProtected, axiosPublic } from "../config/axiosConfig";
 
 interface Item {
   id: number;
@@ -8,15 +8,14 @@ interface Item {
   image: string;
 }
 
-export const getStoreItemsService = async (): Promise<Item[]> => {
+export const getCartItemsService = async (productIds: number[]): Promise<Item[]> => {
   try {
-    const { data } = await axiosPublic.get(`/api/product/get-products`);
+    const { data } = await axiosPublic.post(`/api/product/cart-details`,{ productIds });
     return data.data;
   } catch (error) {
-
     if (axios.isAxiosError(error)) {
       console.log("error message: ", error.message);
-      throw error;
+      throw error; 
     } else {
       console.log("unexpected error: ", error);
       throw new Error("An unexpected error occurred");

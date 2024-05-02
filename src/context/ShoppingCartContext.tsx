@@ -19,7 +19,7 @@ type ShoppingCartContext = {
   removeFromCart: (id: number) => void;
 };
 
-//this is common pattern for context provider in React
+//This is common pattern for context provider in React
 type ShoppingCartProviderProps = {
   children: ReactNode;
 };

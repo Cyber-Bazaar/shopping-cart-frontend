@@ -2,6 +2,7 @@ import { Button, Container, Nav, Navbar as NavbarBs } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import { useAuth0 } from "@auth0/auth0-react";
+import { routes } from "../utilities/constants";
 import { SignupButton } from "./SignupButton";
 import { LoginButton } from "./LoginButton";
 import { LogoutButton } from "./LogoutButton";
@@ -16,7 +17,7 @@ export const Navbar: React.FC = () => {
           {/* <Nav.Link to={"/"} as={NavLink}>
             Home
           </Nav.Link> */}
-          <Nav.Link to="/store" as={NavLink}>
+          <Nav.Link to={routes.store} as={NavLink}>
             Store
           </Nav.Link>
 

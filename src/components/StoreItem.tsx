@@ -7,10 +7,10 @@ type StoreItemProps = {
   id: number;
   name: string;
   price: number;
-  imgUrl: string;
+  image: string;
 };
 
-export function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
+export function StoreItem({ id, name, price, image }: StoreItemProps) {
   //getting function from custom hook
   const {
     getItemQuantity,
@@ -26,9 +26,9 @@ export function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
     <Card className="h-100">
       <Card.Img
         variant="top"
-        src={imgUrl}
+        src={image}
         height="200px"
-        //for doesn't stretching the image and being center od the container
+        //for doesn't stretching the image and being center of the container
         style={{ objectFit: "cover" }}
       />
       <Card.Body className="d-flex flex-column">

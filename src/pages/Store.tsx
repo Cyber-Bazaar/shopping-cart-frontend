@@ -1,31 +1,41 @@
 import React, { useEffect, useState } from "react";
-import storeItem from "../data/items.json"
 import { Col, Row } from "react-bootstrap";
 import { StoreItem } from "../components/StoreItem";
-import { getStoreItems } from "../services/getStoreItems";
-// import { PageLayout } from "../components/page-layout";
+import { getStoreItemsService } from "../services/getStoreItems";
+
+interface Item {
+  id: number;
+  name: string;
+  price: number;
+  image: string;
+}
 
 export const Store: React.FC = () => {
-  const [todoList, setTodoList] = useState();
-  const getTodoList = async () => {
+  const [itemList, setItemList] = useState<Item[]>([]);
+
+  const getStoreItems = async () => {
     try {
-      const data = await getStoreItems();
-      setTodoList(data[0]);
+      const data = await getStoreItemsService();
+      setItemList(data);
     } catch (error) {
       console.log(error);
     }
   };
+
   useEffect(() => {
-    getTodoList();
+    getStoreItems();
   }, []);
-  console.log(todoList)
+
   return (
     <>
       <h1>Store</h1>
-      <Row md={2} xs={1} lg={3} className="g-3">{storeItem.map(item=>( <Col key={item.id}>
+      <Row md={2} xs={1} lg={3} className="g-3">
+        {itemList.map((item:Item) => (
+          <Col key={item.id}>
             <StoreItem {...item} />
-          </Col>))}
+          </Col>
+        ))}
       </Row>
     </>
-  )
+  );
 };

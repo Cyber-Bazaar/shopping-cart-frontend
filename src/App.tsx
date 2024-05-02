@@ -7,6 +7,7 @@ import { Store } from "./pages/Store";
 import { ShoppingCartProvider } from "./context/ShoppingCartContext";
 import { Navbar } from "./components/Navbar";
 import { Container } from "react-bootstrap";
+import { routes } from "./utilities/constants";
 
 
 export const App: React.FC = () => {
@@ -25,8 +26,8 @@ export const App: React.FC = () => {
       <Navbar />
       <Container className="mb-4">
       <Routes>
-        <Route path="/" element={<Store />} />
-        <Route path="/store" element={<Store />} />
+        <Route path={routes.home} element={<Store />} />
+        <Route path={routes.store} element={<Store />} />
         {/* <Route
         path="/profile"
         element={<AuthenticationGuard component={ProfilePage} />}

@@ -19,6 +19,6 @@ export const axiosProtected = axios.create({
   },
 });
 
-export const setAuthToken = async (token:any) => {
+export const setAuthToken = async (token:string) => {
   axiosProtected.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 };
