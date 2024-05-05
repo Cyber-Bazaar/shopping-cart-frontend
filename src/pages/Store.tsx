@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import { StoreItem } from "../components/StoreItem";
-import { getStoreItemsService } from "../services/getStoreItems";
+import { getStoreItemsService } from "../services/getStoreItemsService";
 
 interface Item {
   id: number;

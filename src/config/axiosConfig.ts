@@ -1,4 +1,3 @@
-import { useAuth0 } from "@auth0/auth0-react";
 import axios from "axios"; 
 
 const baseUrl = process.env.REACT_APP_API_SERVER_URL;
@@ -19,6 +18,6 @@ export const axiosProtected = axios.create({
   },
 });
 
-export const setAuthToken = async (token:string) => {
+export const setAuthToken = async (token:any) => {
   axiosProtected.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 };

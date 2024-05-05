@@ -1,5 +1,5 @@
 import axios from "axios";
-import { axiosProtected, axiosPublic } from "../config/axiosConfig";
+import {axiosPublic} from "../config/axiosConfig";
 
 interface Item {
   id: number;

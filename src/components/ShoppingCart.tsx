@@ -1,9 +1,9 @@
-import { Offcanvas, Stack } from "react-bootstrap";
+import { Button, Offcanvas, Stack } from "react-bootstrap";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import { CartItem } from "./CartItem";
 import { formatCurrency } from "../utilities/formatCurrency";
 import { useEffect, useState } from "react";
-import { getCartItemsService } from "../services/getCartItems";
+import { getCartItemsService } from "../services/getCartItemsService";
 
 type ShoppingCartProps = {
   cartOpen: boolean;
@@ -43,6 +43,11 @@ export function ShoppingCart({cartOpen}: ShoppingCartProps) {
     fetchItems();
   }, [cartItems]);
 
+  const handleCheckout = () => {
+    closeCart();
+    window.location.href = "/checkout";
+  };
+
   return (
     <Offcanvas show={cartOpen} onHide={closeCart} placement="end">
       <Offcanvas.Header closeButton>
@@ -62,9 +67,9 @@ export function ShoppingCart({cartOpen}: ShoppingCartProps) {
                 return total + (item?.price || 0) * cartItem.quantity
               }, 0)
             )}
-
-          </div>
+        </div>
         </Stack>
+        <Button onClick={handleCheckout}>Go to Checkout</Button>
       </Offcanvas.Body>
     </Offcanvas>
   );
