@@ -134,32 +134,32 @@ const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
       <Form.Label>First Name</Form.Label>
       <Form.Control type="text" placeholder="Enter first name" value=
       {firstName} onChange={(e) => setFirstName(e.target.value)} />
-      {firstNameError && <div className="error">{firstNameError}</div>}
+      {firstNameError && <div className="text-danger">{firstNameError}</div>}
     </Form.Group>
 
     <Form.Group controlId="lastName">
       <Form.Label>Last Name</Form.Label>
       <Form.Control type="text" placeholder="Enter last name" value={lastName} onChange={(e) => setLastName(e.target.value)}
         />
-      {lastNameError && <div className="error">{lastNameError}</div>}
+      {lastNameError && <div className="text-danger">{lastNameError}</div>}
     </Form.Group>
 
     <Form.Group controlId="address1">
       <Form.Label>Address Line 1</Form.Label>
       <Form.Control type="text" placeholder="Enter address line 1" value={address1} onChange={(e)=>setAddress1(e.target.value)} />
-      {address1Error && <div className="error">{address1Error}</div>}
+      {address1Error && <div className="text-danger">{address1Error}</div>}
     </Form.Group>
 
     <Form.Group controlId="address2">
       <Form.Label>Address Line 2</Form.Label>
       <Form.Control type="text" placeholder="Enter address line 2" value={address2} onChange={(e)=>setAddress2 (e.target.value)} />
-      {address2Error && <div className="error">{address2Error}</div>}
+      {address2Error && <div className="text-danger">{address2Error}</div>}
     </Form.Group>
 
     <Form.Group controlId="zipCode">
       <Form.Label>Zip Code</Form.Label>
       <Form.Control type="number" placeholder="Enter zip code" value={zipCode} onChange={(e)=>setZipCode(e.target.value)}/>
-      {zipCodeError && <div className="error">{zipCodeError}</div>}
+      {zipCodeError && <div className="text-danger">{zipCodeError}</div>}
     </Form.Group>
 
     <Form.Group controlId="shippingMethod">
@@ -169,7 +169,7 @@ const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         <option>Standard</option>
         <option>Express</option>
       </Form.Control>
-      {shippingMethodError && <div className="error">{shippingMethodError}</div>}
+      {shippingMethodError && <div className="text-danger">{shippingMethodError}</div>}
     </Form.Group>
 
     <Button variant="primary" type="submit">
