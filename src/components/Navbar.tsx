@@ -14,20 +14,17 @@ export const Navbar: React.FC = () => {
     <NavbarBs className="big-white shadow-sm mb-3">
       <Container>
         <Nav className="me-auto">
-          {/* <Nav.Link to={"/"} as={NavLink}>
-            Home
-          </Nav.Link> */}
           <Nav.Link to={routes.store} as={NavLink}>
             Store
           </Nav.Link>
 
-          {/* {isAuthenticated && (
+          {isAuthenticated && (
             <>
-              <Nav.Link to={"/about"} as={NavLink}>
-                About
+              <Nav.Link to={routes.allOrders} as={NavLink}>
+                Order History
               </Nav.Link>
             </>
-          )} */}
+          )}
 
           {!isAuthenticated && (
             <>

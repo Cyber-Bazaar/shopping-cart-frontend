@@ -8,26 +8,13 @@ interface Item {
   image: string;
 }
 
-type Order = {
-  first_name:string;
-  last_name:string;
-  address_line1:string;
-  address_line2:string;
-  zip_code:number;
-  shipping_method:string;
-  orderInfo: {
-    productId: number;
-    unitPrice: number;
-    quantity: number;
-  }[];
-}
-
-export const checkOutService = async (orderData: Order,accessToken:string) => {
+export const getAllOrdersService = async(accessToken:string) => {
   try {
-    const { data } = await axiosProtected.post(`/api/order/create`,orderData,{headers: {
+    const { data } = await axiosProtected.get(`/api/order`,{headers: {
       Authorization: `Bearer ${accessToken}`,
     },});
-    return data.message;
+    console.log(data);
+    return data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
       console.log("error message: ", error.message);

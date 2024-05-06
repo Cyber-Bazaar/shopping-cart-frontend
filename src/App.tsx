@@ -9,6 +9,7 @@ import { Navbar } from "./components/Navbar";
 import { Container } from "react-bootstrap";
 import { routes } from "./utilities/constants";
 import { CheckOut } from "./pages/CheckOut";
+import { AllOrders } from "./pages/AllOrders";
 
 
 export const App: React.FC = () => {
@@ -30,14 +31,14 @@ export const App: React.FC = () => {
         <Route path={routes.home} element={<Store />} />
         <Route path={routes.store} element={<Store />} />
         <Route
-        path="/checkout"
+        path={routes.checkOut}
         element={<AuthenticationGuard component={CheckOut} />}
       />
-      {/* <Route path="/public" element={<PublicPage />} />
+      {/* <Route path="/public" element={<PublicPage />} /> */}
       <Route
-        path="/protected"
-        element={<AuthenticationGuard component={ProtectedPage} />}
-      /> */}
+        path={routes.allOrders}
+        element={<AuthenticationGuard component={AllOrders} />}
+      />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       </Container>
