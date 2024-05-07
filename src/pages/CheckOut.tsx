@@ -18,6 +18,7 @@ export const CheckOut: React.FC = () => {
 const { cartItems } = useShoppingCart();
 const [cartItemsInfo, setCartItemsInfo] =useState<Item[]>([]);
 const { getAccessTokenSilently } = useAuth0();
+const {clearCart} = useShoppingCart();
 
 const [firstName, setFirstName] = useState('');
 const [lastName, setLastName] = useState('');
@@ -61,6 +62,7 @@ const checkout = async (orderData:any) => {
   const message= await checkOutService(orderData,accessToken);
   
   if (message === 'successfully inserted') {
+    clearCart();
     alert('Order placed successfully');
   } else {
     alert('Failed to place order');
