@@ -1,6 +1,7 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./styles/styles.css";
 import { BrowserRouter } from "react-router-dom";
 import { App } from "./App";
 import { Auth0ProviderWithNavigate } from "./Auth0ProviderWithNavigate";
