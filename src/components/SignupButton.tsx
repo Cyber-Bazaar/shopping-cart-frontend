@@ -18,7 +18,7 @@ export const SignupButton: React.FC = () => {
   };
 
   return (
-    <Button variant="primary" size="lg" onClick={handleSignUp}>
+    <Button variant="primary" size="lg"onClick={handleSignUp}>
       Sign Up
     </Button>
     
