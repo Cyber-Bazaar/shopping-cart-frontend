@@ -10,6 +10,7 @@ import { Container } from "react-bootstrap";
 import { routes } from "./utilities/constants";
 import { CheckOut } from "./pages/CheckOut";
 import { AllOrders } from "./pages/AllOrders";
+import { Product } from "./pages/Product";
 
 
 export const App: React.FC = () => {
@@ -30,6 +31,7 @@ export const App: React.FC = () => {
       <Routes>
         <Route path={routes.home} element={<Store />} />
         <Route path={routes.store} element={<Store />} />
+        <Route path={routes.product} element={<Product />} />
         <Route
         path={routes.checkOut}
         element={<AuthenticationGuard component={CheckOut} />}

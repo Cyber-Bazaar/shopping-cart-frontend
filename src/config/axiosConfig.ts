@@ -3,7 +3,7 @@ import axios from "axios";
 const baseUrl = process.env.REACT_APP_API_SERVER_URL;
 
 export const axiosPublic = axios.create({
-  baseURL: baseUrl,
+  baseURL: 'http://172.18.131.12:5000',
   timeout: 5000,
   headers: {
     "Content-Type": "application/json",
@@ -11,7 +11,7 @@ export const axiosPublic = axios.create({
 });
 
 export const axiosProtected = axios.create({
-  baseURL: baseUrl,
+  baseURL: 'http://172.18.131.12:5000',
   timeout: 5000,
   headers: {
     "Content-Type": "application/json",
