@@ -1,1 +1,18 @@
 @import "pageLoader.css";
+.Card link {
+  text-decoration: none !important;
+}
+
+.product-image {
+  width: 300px;
+  height: 300px;
+  object-fit: cover; /* This will ensure the image maintains its aspect ratio */
+}
+
+.product-container {
+  height: 300px;
+}
+.product-container .col {
+  display: flex;
+  flex-direction: column;
+}

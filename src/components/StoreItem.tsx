@@ -2,6 +2,7 @@ import { Button, Card } from "react-bootstrap";
 // import { useAuth0 } from "@auth0/auth0-react";
 import { formatCurrency } from "../utilities/formatCurrency";
 import { useShoppingCart } from "../context/ShoppingCartContext";
+import { Link } from "react-router-dom";
 
 type StoreItemProps = {
   id: number;
@@ -18,24 +19,25 @@ export function StoreItem({ id, name, price, image }: StoreItemProps) {
     decreaseCartQuantity,
     removeFromCart,
   } = useShoppingCart();
-  const quantity = getItemQuantity(id)
-
-  // const { isAuthenticated, loginWithRedirect } = useAuth0();
-
+  const quantity = getItemQuantity(id);
   return (
     <Card className="h-100">
-      <Card.Img
-        variant="top"
-        src={image}
-        height="200px"
-        //for doesn't stretching the image and being center of the container
-        style={{ objectFit: "cover" }}
-      />
+      <Link to={`/product/${id}`}>
+        <Card.Img
+          variant="top"
+          src={image}
+          height="200px"
+          //for doesn't stretching the image and being center of the container
+          style={{ objectFit: "cover" }}
+        />
+      </Link>
       <Card.Body className="d-flex flex-column">
-        <Card.Title className="d-flex justify-content-between align-items-baseline mb-4">
-          <span className="fs-2">{name}</span>
-          <span className="fs-2">{formatCurrency(price)}</span>
-        </Card.Title>
+        
+          <Card.Title className="d-flex justify-content-between align-items-baseline mb-4">
+            <span className="fs-2">{name}</span>
+            <span className="fs-2">{formatCurrency(price)}</span>
+          </Card.Title>
+    
         <div className="mt-auto">
           {quantity === 0 ? (
             <Button
