@@ -1,16 +1,23 @@
 import axios from "axios";
 import {axiosPublic} from "../config/axiosConfig";
 
-interface Item {
+interface Product {
   id: number;
   name: string;
   price: number;
   image: string;
 }
 
-export const getStoreItemsService = async (): Promise<Item[]> => {
+interface Res1 {
+  data: Product[];
+  page: number;
+  last_page: number;
+  total: number;
+}
+
+export const getStoreItemsService = async (pageNo:number): Promise<Res1> => {
   try {
-    const { data } = await axiosPublic.get(`/api/product/get-products`);
+    const { data } = await axiosPublic.get(`/api/product/get-products?page=${pageNo}`);
     return data.data;
   } catch (error) {
 

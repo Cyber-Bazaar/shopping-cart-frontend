@@ -16,3 +16,14 @@
   display: flex;
   flex-direction: column;
 }
+
+.pagination-container {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  background-color: #f8f9fa; /* optional: change this to match your site's color scheme */
+  margin-bottom: 0;
+}
